@@ -17,8 +17,15 @@
 
 <div class="topbar">
   <div class="topbar-inner">
-    <a href="2.0MeineWebsite.html" class="home-button"><img src="./logo.svg" alt="Alcedo Logo" class="inline-logo"> Alcedo-Media</a>
-    <ul class="nav">
+    <a href="2.0MeineWebsite.html" class="home-button">
+      <img src="./logo.svg" alt="Alcedo Logo" class="inline-logo"> Alcedo-Media
+    </a>
+     <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav" id="nav">
       <li><a href="#work">Arbeit</a></li>
       <li><a href="#leist">Leistungen</a></li>
       <li><a href="#about">Über</a></li>
@@ -231,6 +238,24 @@
     });
     
   });
+
+
+
+const hamburger = document.getElementById('hamburger');
+const nav = document.getElementById('nav');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  nav.classList.toggle('open');
+});
+
+// Menü schließen wenn ein Link geklickt wird
+nav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    nav.classList.remove('open');
+  });
+});
 </script>
 
 
