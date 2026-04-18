@@ -270,6 +270,13 @@ nav.querySelectorAll('a').forEach(link => {
     nav.classList.remove('open');
   });
 });
+
+// rechtsklick verhindern
+document.addEventListener('contextmenu', e => {
+  if (e.target.closest('.gallery')) {
+    e.preventDefault();
+  }
+});
 </script>
 
 
